@@ -5,8 +5,8 @@ WORKDIR /app
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir fastapi "uvicorn[standard]" pydantic python-dotenv openai numpy scipy
 
-RUN pip install --no-cache-dir "uvicorn[standard]"
 
 COPY app ./app
 
